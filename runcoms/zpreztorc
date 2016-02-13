@@ -32,6 +32,7 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
+  'syntax-highlighting' \
   'prompt'
 
 #
@@ -114,6 +115,8 @@ zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'gitlab_rsa'
 #
 # Syntax Highlighting
 #
+
+zstyle ':prezto:module:syntax-highlighting' color 'yes'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
