@@ -1,6 +1,8 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+set encoding=utf-8
+scriptencoding utf-8
 
 " ================ General Config ====================
 
@@ -30,19 +32,9 @@ let mapleader=","
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundles.vim
 " Use Vundle plugin to manage all other plugins
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'itchyny/lightline.vim'
-
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
+if filereadable(expand("~/.vim/vundles.vim"))
+  source ~/.vim/vundles.vim
+endif
 
 " ================ Turn Off Swap Files ==============
 
@@ -118,4 +110,4 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
-" so ~/.yadr/vim/settings.vim
+so ~/.vim/settings.vim
